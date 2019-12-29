@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1577651954 source:d:\master_1_info_2019\asd\graphes\main.cpp
+	<iostream>
+	<stdlib.h>
+	"graphes.h"
+
+1577651222 source:d:\master_1_info_2019\asd\graphes\graphes.cpp
+	"graphes.h"
+	<iostream>
+	<string>
+
+1577637560 d:\master_1_info_2019\asd\graphes\graphes.h
+	<iostream>
+
