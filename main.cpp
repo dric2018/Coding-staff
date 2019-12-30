@@ -164,7 +164,8 @@ int main()
 
 
                 case '3':
-                        if(n==0){
+                    {
+                         if(n==0){
                         cout<<"[ERREUR] Vous devez d'abord construire un graphe avant d'en afficher la matrice d'adjacence"<<endl;
                         system("PAUSE");
                         system("cls");
@@ -218,11 +219,14 @@ int main()
                     cout<<"Quelle option choisissez-vous ?\n>> ";
                     cin>>choix;
                     choix = (char) choix;
+                    }
+                    break;
 
                 case '4':
                     {
 
                     }
+                    break;
 
                 case '5':{
                     if(n==0){
@@ -245,7 +249,23 @@ int main()
                         choix = (char) choix;
                     }
                     else{
-                        cout<<"Parcours en largeur..."<<endl;
+                            int i, j, sommet_depart;
+                            matrice = matrice;
+                            new_matrice = new int *[n];
+
+                            for(i=0;i<n;i++){
+                                new_matrice[i] = new int [n];
+                                for(j=0;j<n;j++)
+                                    new_matrice[i][j] = matrice[i][j];
+                            }
+
+                            Graphe G(n,orientation);
+                            G.set_matrice(new_matrice);
+
+                            cout<<"Parcours en largeur...Quel est le sommet de depart ?\n>>";
+                            cin>>sommet_depart;
+
+                            G.ParcoursEnLargeur(sommet_depart);
                     }
                     system("PAUSE");
                     system("cls");
@@ -264,6 +284,7 @@ int main()
                     cin>>choix;
                     choix = (char) choix;
                 }
+                break;
 
                 case '6':{
                     if(n==0){
@@ -286,7 +307,23 @@ int main()
                         choix = (char) choix;
                     }
                     else{
-                        cout<<"Parcours en Profondeur..."<<endl;
+                            int i, j, sommet_depart;
+                            matrice = matrice;
+                            new_matrice = new int *[n];
+
+                            for(i=0;i<n;i++){
+                                new_matrice[i] = new int [n];
+                                for(j=0;j<n;j++)
+                                    new_matrice[i][j] = matrice[i][j];
+                            }
+
+                            Graphe G(n,orientation);
+                            G.set_matrice(new_matrice);
+
+                            cout<<"Parcours en profondeur...Quel est le sommet de depart ?\n>>";
+                            cin>>sommet_depart;
+
+                            G.ParcoursEnProfondeur(sommet_depart);
                     }
                     system("PAUSE");
                     system("cls");
@@ -305,10 +342,13 @@ int main()
                     cin>>choix;
                     choix = (char) choix;
                 }
+                break;
+
                 case '7':{
                     cout<<"Merci et a la prochaine..."<<endl;
                     return 0;
                 }
+                break;
 
                 default :{
                     cout <<"Saisie non prise en compte....merci de reessayer"<<endl;

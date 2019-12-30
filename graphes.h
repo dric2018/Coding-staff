@@ -32,5 +32,10 @@ public:
     int ** get_matrice();
     void afficherMatrice();
     void lier_noeuds(int u, int v);
+    bool liaison_presente(int u, int v);
+
+    /**parcours des graphes*/
+    void ParcoursEnLargeur(int sommet_depart);
+    void ParcoursEnProfondeur(int sommet_depart);
 };
 #endif
